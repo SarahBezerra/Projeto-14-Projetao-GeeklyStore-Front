@@ -1,0 +1,9 @@
+body {
+    /*font-family*/
+}
+
+.root {
+    min-height: 100vh;
+
+    background-color: #190D17;
+}
