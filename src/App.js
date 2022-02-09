@@ -1,7 +1,10 @@
-import { React } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { React } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import HomePage from "./pages/HomePage/index";
+import HomePage from "./pages/HomePage/index"
+import SignInPage from "./pages/SignInPage/index"
+import SignUpPage from "./pages/SignUpPage/index"
+import ShoppingCartPage from "./pages/ShoppingCartPage/index"
 
 export default function App() {
 
