@@ -11,6 +11,16 @@ const GlobalStyled = createGlobalStyle`
         height: 100vh;
         font-family: 'Chakra Petch', sans-serif;
     }
+    
+    .root{
+        min-height: 100vh;
+        background-color: #190D17;
+        color: #FFF;
+    }
+
+    a{
+        text-decoration: none;
+    }
 
 `
 
