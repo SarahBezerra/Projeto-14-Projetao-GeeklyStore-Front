@@ -9,6 +9,7 @@ import GlobalStyled from "./pages/GlobalStyled/GlobalStyled"
 export default function App() {
 
     return(
+        
         <BrowserRouter>
             <GlobalStyled />
             <Routes>
