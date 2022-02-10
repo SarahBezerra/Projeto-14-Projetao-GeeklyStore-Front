@@ -10,7 +10,6 @@ export default function App() {
 
     return(
         <BrowserRouter>
-            <Header/>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/cadastro" element={<SignUpPage />} />
