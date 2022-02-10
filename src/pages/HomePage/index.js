@@ -1,11 +1,32 @@
+import { useEffect, useState } from 'react'
+
 import Header from '../../components/Header'
 import Category from './Category'
 import Product from './Product'
-
 import { Categories, CategoryList, Products, ProductsList, Footer } from './HomeStyle'
 import categoriesData from '../../dates/categoriesData'
+import api from '../../services/api'
 
 export default function HomePage(){
+
+    const [ allProducts, setAllProducts ] = useState([]);
+
+    async function loadProducts() {
+        try {
+            const products = await api.getProducts();
+            setAllProducts(products.data)
+        } catch(error) {
+            console.log(error);
+        }
+    }
+    
+    useEffect(() => {
+        loadProducts();
+    },[])
+
+    if(allProducts.length === 0) {
+        return("carregando.....")
+    }
 
     return(
         <>
@@ -23,11 +44,11 @@ export default function HomePage(){
         <Products>
             <h2>Loja</h2>
             <ProductsList>
-                {categoriesData.map(category => <Product key={category.name} category={category}/>)}
+                {allProducts.map(product => <Product key={product._id} product={product}/>)}
             </ProductsList>
         </Products>
 
-        <Footer>Geekly Corporation</Footer>
+        <Footer>GeeklyStore Corporation</Footer>
         </>
     )
 }

@@ -1,13 +1,27 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Sidebar from './Sidebar';
 
 export default function Header() {
+
+    const [ sidebar, setSidebar ] = useState(false);
+    const showSidebar = () => setSidebar(!sidebar);
     
     return(
-        <Container>
-            <ion-icon name="list-outline"></ion-icon>
+        <>
+        <Container sidebar={sidebar}>
+            <div onClick={showSidebar}>
+                <ion-icon name="list-outline"></ion-icon>
+            </div>
             <p>GEEKLY</p>
-            <ion-icon name="cart-outline"></ion-icon>
+            <Link to="carrinho_de_compras">
+                <ion-icon name="cart-outline"></ion-icon>
+            </Link>
         </Container>
+        
+        {sidebar ? <Sidebar/> : ''}
+        </>
     )
 }
 

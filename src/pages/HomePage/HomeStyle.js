@@ -3,17 +3,17 @@ import styled from "styled-components";
 export const Categories = styled.div`
     width: 100%;
     height: auto;
-    padding: 80px 15px 40px;
+    padding: 80px 15px 30px;
 
     h2 {
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         font-size: 20px;
         font-weight: 700;
     }
 `
 export const CategoryList = styled.div`
     width: 100%;
-    height: 75px;
+    height: 90px;
 
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@ export const Products = styled.div`
     padding: 0 15px;
 
     h2 {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         font-size: 20px;
         font-weight: 700;
     }
@@ -80,7 +80,7 @@ export const ProductsList = styled.li`
 
     ul {
         width: 160px;
-        height: 280px;
+        height: 285px;
         background-color: #D4CFCC;
         border-radius: 5px;
 

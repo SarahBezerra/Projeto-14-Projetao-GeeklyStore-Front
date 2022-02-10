@@ -1,11 +1,11 @@
-export default function Product({ category }){
+export default function Product({ product }){
     return(
         <ul>
-            <img src="https://http2.mlstatic.com/D_NQ_NP_798420-MLB41986960524_052020-W.jpg" alt="name_aqui"/>
+            <img src={product.img} alt={product.name}/>
             <div className='infos'>
-                <p className="name">Moletom adad ahgaa</p>
-                <p className="description">Descasajnsja ans jska </p>
-                <p className="price">R$ 119,98</p>
+                <p className="name">{product.name}</p>
+                <p className="description">{product.description}</p>
+                <p className="price">R$ {product.price}</p>
                 <ion-icon name="cart-outline"></ion-icon>
             </div>
         </ul>
