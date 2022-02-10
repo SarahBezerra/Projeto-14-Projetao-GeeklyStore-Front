@@ -1,9 +1,10 @@
 body {
-    /*font-family*/
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .root {
     min-height: 100vh;
 
     background-color: #190D17;
+    color: #FFF;
 }
