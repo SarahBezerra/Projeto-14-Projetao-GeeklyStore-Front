@@ -1,7 +1,11 @@
 import ReactDOM from "react-dom";
 import App from "./App"
+import { AuthProvider } from "./services/auth";
 
-import './styles/reset.css'
-import './styles/style.css';
 
-ReactDOM.render(<App />, document.querySelector('.root'));
+
+ReactDOM.render(
+    <AuthProvider>
+        <App />
+    </AuthProvider>
+, document.querySelector('.root'));
