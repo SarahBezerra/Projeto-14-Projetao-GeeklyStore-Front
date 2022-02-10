@@ -1,16 +1,16 @@
 import { React } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-
 import HomePage from "./pages/HomePage/index"
 import SignInPage from "./pages/SignInPage/index"
 import SignUpPage from "./pages/SignUpPage/index"
 import ShoppingCartPage from "./pages/ShoppingCartPage/index"
+import GlobalStyled from "./pages/GlobalStyled/GlobalStyled"
 
 export default function App() {
 
     return(
         <BrowserRouter>
-            <Header/>
+            <GlobalStyled />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/cadastro" element={<SignUpPage />} />
