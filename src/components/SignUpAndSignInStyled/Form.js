@@ -15,6 +15,14 @@ const Form = styled.form `
         border-radius: 50px;
         margin-bottom: 15px;
 
+        pointer-events: ${props => props.status === "loading" ? "none" : "visible"};
+        outline: ${props => props.status === "loading" ? "none" : "0px"};
+        opacity: ${props => props.status === "loading" ? "0.8" : "1"};
+        
+        :hover{
+            cursor: ${props => props.status === "loading" ? "not-allowed" : "default"};
+        }
+
         ::placeholder{
             font-size: 20px;
             font-style: normal;
@@ -51,6 +59,11 @@ const Form = styled.form `
         text-align: left;
         color: #190D17;
 
+        opacity: ${props => props.status === "loading" ? "0.8" : "1"};
+        
+        :hover{
+            cursor: ${props => props.status === "loading" ? "not-allowed" : "default"};
+        }
     }
 `
 
