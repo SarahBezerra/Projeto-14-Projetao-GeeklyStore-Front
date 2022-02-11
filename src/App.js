@@ -5,6 +5,7 @@ import SignInPage from "./pages/SignInPage/index"
 import SignUpPage from "./pages/SignUpPage/index"
 import ShoppingCartPage from "./pages/ShoppingCartPage/index"
 import GlobalStyled from "./pages/GlobalStyled/GlobalStyled"
+import CheckoutPage from "./pages/CheckoutPage"
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
                 <Route path="/cadastro" element={<SignUpPage />} />
                 <Route path="/login" element={<SignInPage />} />
                 <Route path="/carrinho_de_compras" element={<ShoppingCartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
             </Routes>
         </BrowserRouter>
     );
