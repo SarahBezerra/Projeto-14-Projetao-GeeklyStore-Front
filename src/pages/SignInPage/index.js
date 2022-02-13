@@ -20,8 +20,8 @@ export default function SignInPage(){
 
     async function signIn(e){
         e.preventDefault()
-        console.log(formLogin)
         const formUser = await api.postSignIn(formLogin);
+        console.log(formUser.data)
         setUser(formUser.data);
         localStorage.setItem('user', JSON.stringify(formUser));
         setButtonStatus("")

@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import { MutatingDots, Rings } from "react-loader-spinner";
+import { Rings } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import axios from "axios"
 import Container from "../GlobalStyled/Container";
