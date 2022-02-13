@@ -32,6 +32,29 @@ const CheckoutContainer = styled.div `
         
     }
 
+    button{
+        width: 100%;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 15%;
+
+        border: none;
+        border-radius: 50px;
+        background-color: #9F8795;
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #190D17;
+    }
+
 `
 
 export default CheckoutContainer

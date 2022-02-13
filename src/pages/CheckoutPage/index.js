@@ -1,5 +1,5 @@
-import { useState, useEffect} from "react";
-import { Rings } from "react-loader-spinner";
+import { useState} from "react";
+import { Rings} from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import axios from "axios"
 import Container from "../GlobalStyled/Container";
@@ -8,17 +8,17 @@ import CheckoutContainer from "./Styled/CheckoutContainer";
 
 
 export default function CheckoutPage(){
-    const [statusPage, setStatusPage] = useState("");
+    const [statusPage, setStatusPage] = useState("validate");
 
-    useEffect(() => {
-        const response = axios.post(`http://localhost:5000/checkout`);
-        response.then(response => {
-            console.log(response.data);
-            setStatusPage("loading");
-        })
-        response.catch(error => console.log(error))
-    }, []);
-            
+    function confirm(){
+        setStatusPage("")
+        const response = axios.post(`https://geekly-project-back.herokuapp.com/checkout`);
+            response.then(response => {
+                console.log(response.data);
+                setStatusPage("loaded");
+            })
+            response.catch(error => console.log(error))
+        }
 
     if(statusPage === ""){
         return (
@@ -28,6 +28,17 @@ export default function CheckoutPage(){
         )
     }
     
+    if(statusPage === "validate"){
+        return (
+            <Container>
+                <CheckoutContainer>
+                    <p>map dos produtos</p>
+                    <button onClick={confirm}>Confirmar Compra</button>
+                    <Link to = "/carrinho_de_compras">Voltar</Link>
+                </CheckoutContainer>
+            </Container>
+        )
+    }
 
     return (
         <Container>
