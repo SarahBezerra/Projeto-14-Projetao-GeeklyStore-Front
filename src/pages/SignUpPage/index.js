@@ -25,7 +25,6 @@ export default function SignUpPage(){
         e.preventDefault();
         
         const status = await api.postSignUp(formSignUp);
-
         if(parseInt(status) === 200){
             alert("Cadastro realizado com sucesso!");
             setButtonStatus("")
