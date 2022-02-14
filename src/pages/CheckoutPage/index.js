@@ -8,6 +8,7 @@ import CheckoutContainer from "./Styled/CheckoutContainer";
 import { useUser } from "../../services/auth";
 
 
+
 export default function CheckoutPage(){
     const [statusPage, setStatusPage] = useState("validate");
     const {user} = useUser()
