@@ -25,8 +25,6 @@ export default function HomePage({ token, setToken }){
         loadProducts();
     },[])
 
-    console.log(allProducts);
-
     if(allProducts.length === 0){
         return (
             <Container>
