@@ -1,7 +1,7 @@
 export default function Product({ product }){
     return(
         <ul>
-            <img src={product.img} alt={product.name}/>
+            <img src={product.image} alt={product.name}/>
             <div className='infos'>
                 <p className="name">{product.name}</p>
                 <p className="description">{product.description}</p>

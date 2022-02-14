@@ -23,7 +23,7 @@ export default function SignInPage(){
         const formUser = await api.postSignIn(formLogin);
         console.log(formUser.data)
         setUser(formUser.data);
-        localStorage.setItem('user', JSON.stringify(formUser));
+        localStorage.setItem('user', JSON.stringify(formUser.data));
         setButtonStatus("")
         navigate("/")
         

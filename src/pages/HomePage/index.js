@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-
 import Header from '../../components/Header'
 import Category from './Category'
 import Product from './Product'
 import { Categories, CategoryList, Products, ProductsList, Footer } from './HomeStyle'
 import categoriesData from '../../dates/categoriesData'
 import api from '../../services/api'
+import Container from '../GlobalStyled/Container'
+import { Rings } from 'react-loader-spinner'
 
 export default function HomePage(){
 
@@ -14,7 +15,7 @@ export default function HomePage(){
     async function loadProducts() {
         try {
             const products = await api.getProducts();
-            setAllProducts(products.data)
+            setAllProducts(products)
         } catch(error) {
             console.log(error);
         }
@@ -24,8 +25,14 @@ export default function HomePage(){
         loadProducts();
     },[])
 
-    if(allProducts.length === 0) {
-        return("carregando.....")
+    console.log(allProducts);
+
+    if(allProducts.length === 0){
+        return (
+            <Container>
+                <Rings color="#D4CFCC" height={200} width={200}/>
+            </Container>
+        )
     }
 
     return(

@@ -5,14 +5,24 @@ import axios from "axios"
 import Container from "../GlobalStyled/Container";
 import check from "./check/check.gif"
 import CheckoutContainer from "./Styled/CheckoutContainer";
+import { useUser } from "../../services/auth";
 
 
 export default function CheckoutPage(){
     const [statusPage, setStatusPage] = useState("validate");
+    const {user} = useUser()
 
     function confirm(){
         setStatusPage("")
-        const response = axios.post(`https://geekly-project-back.herokuapp.com/checkout`);
+        const response = axios.post(`https://geekly-project-back.herokuapp.com/checkout`,
+            {
+                email: user.email
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${user.token}`
+                }
+            });
             response.then(response => {
                 console.log(response.data);
                 setStatusPage("loaded");
