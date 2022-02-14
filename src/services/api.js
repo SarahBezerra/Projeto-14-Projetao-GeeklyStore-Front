@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:5000';//https://geekly-project-back.herokuapp.com
+const BASE_URL = 'https://geekly-project-back.herokuapp.com';
 
 async function getProducts(){
     const products = await axios.get(`${BASE_URL}/`);
