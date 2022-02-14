@@ -43,7 +43,7 @@ export default function CheckoutPage(){
             <Container>
                 <CheckoutContainer>
                     <button onClick={confirm}>Confirmar Compra</button>
-                    <Link to = "/carrinho_de_compras">Voltar</Link>
+                    <Link to = "/shopping-cart">Voltar</Link>
                 </CheckoutContainer>
             </Container>
         )
