@@ -24,7 +24,6 @@ export default function CheckoutPage(){
                 }
             });
             response.then(response => {
-                console.log(response.data);
                 setStatusPage("loaded");
             })
             response.catch(error => console.log(error))
@@ -42,7 +41,6 @@ export default function CheckoutPage(){
         return (
             <Container>
                 <CheckoutContainer>
-                    <p>map dos produtos</p>
                     <button onClick={confirm}>Confirmar Compra</button>
                     <Link to = "/carrinho_de_compras">Voltar</Link>
                 </CheckoutContainer>
