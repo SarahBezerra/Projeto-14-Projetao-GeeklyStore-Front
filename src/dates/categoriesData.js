@@ -12,4 +12,5 @@ const categoriesData =
         {name: 'jjj', icon: 'happy-outline'}
     ];
 
+    
 export default categoriesData;
