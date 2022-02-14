@@ -1,17 +1,18 @@
 import api from "../../services/api";
 
 export default function Product({ product, token }){
+    
+    async function deleteThisProduct() {
 
-    async function addProductInCart() {
-        if(!token) {
-            alert("Para continuar faça login ou cadastre-se");
-            return;
+        const confirmation = window.confirm("Realmente deseja excluir esse item do seu carrinho?")
+
+        if(!confirmation) {
+            return
         }
 
         try {
-            const response = await api.addItemShoppingCart(token, product._id);
-            console.log(response)
-
+            const sucess = await api.deleteProduct(token, product._id);
+            console.log(sucess)
         } catch(error) {
             console.log(error);
         }
@@ -22,10 +23,10 @@ export default function Product({ product, token }){
             <img src={product.image} alt={product.name}/>
             <div className='infos'>
                 <p className="name">{product.name}</p>
-                <p className="description">{product.description}</p>
                 <p className="price">R$ {product.price}</p>
-                <ion-icon name="cart-outline" onClick={addProductInCart}></ion-icon>
+                <ion-icon onClick={deleteThisProduct} name="trash-outline"></ion-icon>
             </div>
         </ul>
     )
+
 }

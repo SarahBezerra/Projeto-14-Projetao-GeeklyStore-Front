@@ -1,34 +1,35 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export default function Sidebar() {
+export default function Sidebar({setToken}) {
     
     return(
         <Container>
             <div className="sidebar">
-                <Link to="/carrinho_de_compras">
+                <Link to="shopping-cart">
                     <ion-icon name="cart-outline"></ion-icon>
                     Carrinho
                 </Link>
 
                 <hr/>
 
-                <Link to="/favoritos">
+                <Link to="/favorites">
                     <ion-icon name="heart-outline"></ion-icon>
                     Favoritos
                 </Link>
 
                 <hr/>
 
-                <Link to="/historico">
+                <Link to="/historic">
                     <ion-icon name="reader-outline"></ion-icon>
                     Histórico
                 </Link>
 
                 <hr/>
                 
-                <Link to="/login">
+                <Link to="/sign-in">
                     <ion-icon name="exit-outline"></ion-icon>
+                    {setToken("")}
                     Sair
                 </Link>
             </div>

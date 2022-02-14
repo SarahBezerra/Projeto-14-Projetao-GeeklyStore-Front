@@ -55,7 +55,7 @@ export default function CheckoutPage(){
             <CheckoutContainer>
                 <img src = {check} alt = "check"/>
                 <span>Sua compra foi efetuada com sucesso!</span>
-                <Link to = "/login"><ion-icon name="planet-outline"></ion-icon> Voltar para a Home</Link>
+                <Link to = "/"><ion-icon name="planet-outline"></ion-icon>Voltar para a Home</Link>
             </CheckoutContainer>
         </Container>
     )

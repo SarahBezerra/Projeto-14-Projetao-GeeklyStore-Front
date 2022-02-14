@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useUser } from '../services/auth';
 import Sidebar from './Sidebar';
 
-export default function Header() {
+export default function Header({setToken}) {
 
     const [ sidebar, setSidebar ] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
@@ -19,13 +19,13 @@ export default function Header() {
             <p>GEEKLY</p>
             <MiniContainer>
                 <img src = {user.avatar} alt = "Imagem do usuário"/>
-                <Link to="carrinho_de_compras">
+                <Link to="shopping-cart">
                     <ion-icon name="cart-outline"></ion-icon>
                 </Link>
             </MiniContainer>
         </Container>
         
-        {sidebar ? <Sidebar/> : ''}
+        {sidebar ? <Sidebar setToken={setToken}/> : ''}
         </>
     )
 }

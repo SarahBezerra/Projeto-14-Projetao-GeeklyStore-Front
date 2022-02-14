@@ -1,4 +1,4 @@
-import { React } from "react"
+import { React, useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage/index"
 import SignInPage from "./pages/SignInPage/index"
@@ -9,16 +9,18 @@ import CheckoutPage from "./pages/CheckoutPage"
 
 export default function App() {
 
+    const [ token, setToken ] = useState("");
+
     return(
         
         <BrowserRouter>
             <GlobalStyled />
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/cadastro" element={<SignUpPage />} />
-                <Route path="/login" element={<SignInPage />} />
-                <Route path="/carrinho_de_compras" element={<ShoppingCartPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/" element={<HomePage token={token} setToken={setToken} />} />
+                <Route path="/sign-up" element={<SignUpPage />} />
+                <Route path="/sign-in" element={<SignInPage setToken={setToken} />} />
+                <Route path="/shopping-cart" element={<ShoppingCartPage token={token} />} />
+                <Route path="/checkout" element={<CheckoutPage token={token} />} />
             </Routes>
         </BrowserRouter>
     );
