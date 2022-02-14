@@ -23,7 +23,7 @@ export default function Product({ product, token }){
             <img src={product.image} alt={product.name}/>
             <div className='infos'>
                 <p className="name">{product.name}</p>
-                <p className="price">{product.price}</p>
+                <p className="price">R$ {product.price}</p>
                 <ion-icon onClick={deleteThisProduct} name="trash-outline"></ion-icon>
             </div>
         </ul>

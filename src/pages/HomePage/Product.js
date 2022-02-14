@@ -12,9 +12,8 @@ export default function Product({ product, token }){
         }
 
         try {
-            const response = await api.addItemShoppingCart(token, product._id);
+            await api.addItemShoppingCart(token, product._id);
             alert("Produto adicionado ao carrinho!")
-            console.log(response)
 
         } catch(error) {
             console.log(error);
@@ -27,7 +26,7 @@ export default function Product({ product, token }){
             <div className='infos'>
                 <p className="name">{product.name}</p>
                 <p className="description">{product.description}</p>
-                <p className="price">{product.price}</p>
+                <p className="price">R$ {product.price}</p>
                 <ion-icon name="cart-outline" onClick={addProductInCart}></ion-icon>
             </div>
         </ul>
