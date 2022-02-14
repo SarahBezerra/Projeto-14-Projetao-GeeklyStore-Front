@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { Rings} from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import axios from "axios"
@@ -13,8 +13,8 @@ export default function CheckoutPage(){
     const [statusPage, setStatusPage] = useState("validate");
     const {user} = useUser()
 
-    function confirm(){
-        setStatusPage("")
+   
+    useEffect(() => {
         const response = axios.post(`https://geekly-project-back.herokuapp.com/checkout`,
             {
                 email: user.email
@@ -29,7 +29,8 @@ export default function CheckoutPage(){
                 setStatusPage("loaded");
             })
             response.catch(error => console.log(error))
-        }
+    }, [])
+        
 
     if(statusPage === ""){
         return (
@@ -39,17 +40,6 @@ export default function CheckoutPage(){
         )
     }
     
-    if(statusPage === "validate"){
-        return (
-            <Container>
-                <CheckoutContainer>
-                    <button onClick={confirm}>Confirmar Compra</button>
-                    <Link to = "/shopping-cart">Voltar</Link>
-                </CheckoutContainer>
-            </Container>
-        )
-    }
-
     return (
         <Container>
             <CheckoutContainer>

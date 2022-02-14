@@ -150,13 +150,22 @@ const Infos = styled.div`
         color: green;
     }
 
-    button {
-        width: 260px;
-        height: 40px;
-
-        background-color: green;
+    button{
+        width: 300px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        border: none;
         border-radius: 50px;
-
-        color: #FFF;
+        background-color: #9F8795;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #190D17;
     }
 `
