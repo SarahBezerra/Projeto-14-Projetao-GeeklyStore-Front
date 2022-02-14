@@ -22,7 +22,7 @@ export default function SignInPage({ setToken }){
         e.preventDefault()
         const formUser = await api.postSignIn(formLogin);
         setUser(formUser.data);
-        localStorage.setItem('user', JSON.stringify(formUser));
+        localStorage.setItem('user', JSON.stringify(formUser.data));
         setButtonStatus("")
         setToken(formUser.data.token)
         navigate("/")

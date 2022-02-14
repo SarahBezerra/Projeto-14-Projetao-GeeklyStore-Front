@@ -4,7 +4,7 @@ const BASE_URL = 'https://geekly-project-back.herokuapp.com';
 
 async function getProducts(){
     const products = await axios.get(`${BASE_URL}/`);
-    return products;
+    return products.data;
 }
 
 async function postSignIn(form){

@@ -54,7 +54,11 @@ export default function SignUpPage(){
                     <input type = "password" placeholder = "Confirmar senha" name = "confirmPassword" value = {formSignUp.confirmPassword} onChange = {controlledInput}/>
                     <button type = "submit" onClick={() => setButtonStatus("loading")}>{buttonStatus === 'loading' ? <ThreeDots type="ThreeDots" color="#190D17" height={40} width={40} /> : "Cadastrar"}</button>
                 </Form>
+<<<<<<< HEAD
                 <Link to = "/sign-in">Tem uma conta? Faça login!</Link>
+=======
+                <Link to = "/login">Tem uma conta? Faça login!</Link>
+>>>>>>> 6fec2f6a115f5e8aabd281227489182fd75de2fa
             </SignInSignUpContainer>
         </Container>
     )
