@@ -42,7 +42,6 @@ export default function CheckoutPage(){
         return (
             <Container>
                 <CheckoutContainer>
-                    <p>map dos produtos</p>
                     <button onClick={confirm}>Confirmar Compra</button>
                     <Link to = "/carrinho_de_compras">Voltar</Link>
                 </CheckoutContainer>

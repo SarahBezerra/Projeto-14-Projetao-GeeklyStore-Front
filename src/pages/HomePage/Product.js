@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
 export default function Product({ product, token }){
+    const navigate = useNavigate()
 
     async function addProductInCart() {
         if(!token) {
             alert("Para continuar faça login ou cadastre-se");
+            navigate("/sign-in")
             return;
         }
 
