@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useUser } from '../services/auth';
 import Sidebar from './Sidebar';
 
 export default function Header() {
 
     const [ sidebar, setSidebar ] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+    const {user} = useUser();
     
     return(
         <>
@@ -15,9 +17,12 @@ export default function Header() {
                 <ion-icon name="list-outline"></ion-icon>
             </div>
             <p>GEEKLY</p>
-            <Link to="carrinho_de_compras">
-                <ion-icon name="cart-outline"></ion-icon>
-            </Link>
+            <MiniContainer>
+                <img src = {user.avatar} alt = "Imagem do usuário"/>
+                <Link to="carrinho_de_compras">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </Link>
+            </MiniContainer>
         </Container>
         
         {sidebar ? <Sidebar/> : ''}
@@ -49,5 +54,20 @@ const Container = styled.div`
         color: #190D17;
         font-size: 25px;
         font-weight: 700;
+
+        padding-left: 45px;
     }
+
+    img{
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50px;
+        margin-right: 5px;
+    }
+`
+
+const MiniContainer = styled.div`
+    display: flex;
+    align-items: center;
 `
