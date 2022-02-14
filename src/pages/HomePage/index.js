@@ -7,7 +7,7 @@ import { Categories, CategoryList, Products, ProductsList, Footer } from './Home
 import categoriesData from '../../dates/categoriesData'
 import api from '../../services/api'
 
-export default function HomePage(){
+export default function HomePage({ token, setToken }){
 
     const [ allProducts, setAllProducts ] = useState([]);
 
@@ -30,7 +30,7 @@ export default function HomePage(){
 
     return(
         <>
-        <Header></Header>
+        <Header setToken={setToken}></Header>
 
         <Categories>
             <h2>Categorias</h2>
@@ -44,7 +44,7 @@ export default function HomePage(){
         <Products>
             <h2>Loja</h2>
             <ProductsList>
-                {allProducts.map(product => <Product key={product._id} product={product}/>)}
+                {allProducts.map(product => <Product key={product._id} product={product} token={token} />)}
             </ProductsList>
         </Products>
 

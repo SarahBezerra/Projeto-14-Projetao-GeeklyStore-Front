@@ -8,7 +8,7 @@ import api from "../../services/api";
 import { ThreeDots } from "react-loader-spinner";
 import { useUser } from "../../services/auth";
 
-export default function SignInPage(){
+export default function SignInPage({ setToken }){
 
     const navigate = useNavigate();
     const [buttonStatus, setButtonStatus] = useState("");
@@ -21,12 +21,11 @@ export default function SignInPage(){
     async function signIn(e){
         e.preventDefault()
         const formUser = await api.postSignIn(formLogin);
-        console.log(formUser.data)
         setUser(formUser.data);
         localStorage.setItem('user', JSON.stringify(formUser));
         setButtonStatus("")
+        setToken(formUser.data.token)
         navigate("/")
-        
     }
 
     function controlledInput(e){
@@ -44,7 +43,7 @@ export default function SignInPage(){
                     <input type = "password" placeholder = "Senha" name = "password" value = {formLogin.password} onChange = {controlledInput}/>
                     <button type = "submit" onClick={() => setButtonStatus("loading")}>{buttonStatus === 'loading' ? <ThreeDots type="ThreeDots" color="#190D17" height={40} width={40} /> : "Entrar"}</button>
                 </Form>
-                <Link to = "/cadastro">Não tem uma conta? Cadastre-se</Link>
+                <Link to = "/sign-up">Não tem uma conta? Cadastre-se</Link>
             </SignInSignUpContainer>
         </Container>
     )

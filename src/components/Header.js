@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Sidebar from './Sidebar';
 
-export default function Header() {
+export default function Header({setToken}) {
 
     const [ sidebar, setSidebar ] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
@@ -15,12 +15,12 @@ export default function Header() {
                 <ion-icon name="list-outline"></ion-icon>
             </div>
             <p>GEEKLY</p>
-            <Link to="carrinho_de_compras">
+            <Link to="shopping-cart">
                 <ion-icon name="cart-outline"></ion-icon>
             </Link>
         </Container>
         
-        {sidebar ? <Sidebar/> : ''}
+        {sidebar ? <Sidebar setToken={setToken}/> : ''}
         </>
     )
 }

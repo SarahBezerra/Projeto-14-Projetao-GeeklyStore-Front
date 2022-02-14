@@ -28,7 +28,7 @@ export default function SignUpPage(){
         if(parseInt(status) === 200){
             alert("Cadastro realizado com sucesso!");
             setButtonStatus("")
-            navigate("/login");
+            navigate("/sign-in");
             return;
         }
 
@@ -54,7 +54,7 @@ export default function SignUpPage(){
                     <input type = "password" placeholder = "Confirmar senha" name = "confirmPassword" value = {formSignUp.confirmPassword} onChange = {controlledInput}/>
                     <button type = "submit" onClick={() => setButtonStatus("loading")}>{buttonStatus === 'loading' ? <ThreeDots type="ThreeDots" color="#190D17" height={40} width={40} /> : "Cadastrar"}</button>
                 </Form>
-                <Link to = "/cadastro">Tem uma conta? Faça login!</Link>
+                <Link to = "/sign-in">Tem uma conta? Faça login!</Link>
             </SignInSignUpContainer>
         </Container>
     )
