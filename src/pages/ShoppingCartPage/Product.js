@@ -11,8 +11,9 @@ export default function Product({ product, token }){
         }
 
         try {
-            const sucess = await api.deleteProduct(token, product._id);
-            console.log(sucess)
+            alert("Funcionalidade incompleta");
+            //const sucess = await api.deleteProduct(token, product._id);
+            //console.log(sucess)
         } catch(error) {
             console.log(error);
         }
